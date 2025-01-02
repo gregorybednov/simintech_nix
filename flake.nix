@@ -31,7 +31,7 @@
             pango.out
             xorg.libX11.out
             zlib.out
-            (pkgs.writeShellScriptBin "firefox" "exec ${pkgs.chromium}/bin/chromium \"$@\"")
+            (pkgs.writeShellScriptBin "firefox" "exec ${pkgs.chromium}/bin/chromium \"$@\"") # похоже, что SimInTech захардкодил Firefox, но не все так любят Firefox
           ];
           runScript = "${src}/bin/mmain";
         };
