@@ -58,5 +58,5 @@
       # Внутреннее определение флейка
       packages.x86_64-linux.simintech = simintech;
       defaultPackage.x86_64-linux = simintech;
-    }
+    };
 }
