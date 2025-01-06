@@ -48,6 +48,7 @@
 
         installPhase = ''
           runHook preInstall
+          ls -la
           mkdir -p $out/bin
           cp ${fhsEnv}/bin/${pname}-fhs-env $out/bin/simintech
           runHook postInstall
