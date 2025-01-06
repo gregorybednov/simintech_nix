@@ -14,7 +14,7 @@
         version = "2.23.13";
         src = builtins.fetchTarball {
           url = "http://kafpi.local/simintech.tar.gz"; # подставьте сюда свой адрес дистрибутива SimInTech
-          sha256 = "";
+          sha256 = "sha256:1z7dxlx9zrzh758brb9npvi6q4ylvrhb4fi25jzgq1v3nxlrsxdq";
         };
 
         fhsEnv = pkgs.buildFHSEnv {
