@@ -14,7 +14,7 @@
         version = "2.23.13";
         src = builtins.fetchTarball {
           url = "http://kafpi.local/simintech.tar.gz"; # подставьте сюда свой адрес дистрибутива SimInTech
-          sha256 = "sha256:17ya507nxr1jyyzjkb66s6z61fq7vs4dx1h0z9bgfa5kymql9s9b";
+          sha256 = "";
         };
 
         fhsEnv = pkgs.buildFHSEnv {
@@ -50,6 +50,8 @@
           runHook preInstall
           mkdir -p $out/bin
           mkdir -p $out/share/applications
+          mkdir -p $out/share/icons
+          cp ${src}/share/icon.svg $out/share/icons/simintech.svg
           cp ${fhsEnv}/bin/${pname}-fhs-env $out/bin/simintech
           cp ${desktopItem}/share/applications/*.desktop $out/share/applications
           runHook postInstall
