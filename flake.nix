@@ -30,7 +30,7 @@
             pango.out
             xorg.libX11.out
             zlib.out
-            (pkgs.writeShellScriptBin "firefox" "exec ${pkgs.chromium}/bin/chromium \"$@\"") # похоже, что SimInTech захардкодил Firefox, но не все так любят Firefox
+            (pkgs.writeShellScriptBin "firefox" "exec ${pkgs.chromium}/bin/chromium \"$@\"") # похоже, что SimInTech захардкодил Firefox, но не все так юзают Firefox
           ];
           runScript = "${src}/bin/mmain";
         };
@@ -48,10 +48,10 @@
 
         installPhase = ''
           runHook preInstall
-          ls -la
           mkdir -p $out/bin
           cp ${fhsEnv}/bin/${pname}-fhs-env $out/bin/simintech
           runHook postInstall
+          cp ${desktopItem}/share/applications/*.desktop $out/share/applications
         '';
       };
     in {
