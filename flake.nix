@@ -49,9 +49,10 @@
         installPhase = ''
           runHook preInstall
           mkdir -p $out/bin
+          mkdir -p $out/share/applications
           cp ${fhsEnv}/bin/${pname}-fhs-env $out/bin/simintech
-          runHook postInstall
           cp ${desktopItem}/share/applications/*.desktop $out/share/applications
+          runHook postInstall
         '';
       };
     in {
